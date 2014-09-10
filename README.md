@@ -52,7 +52,9 @@ This section includes instructions on creating deploying a container running Scu
   1. Locally (from boot2docker)
 ``docker run -d -p 443:443 "scumblr"`` 
   2. **or** On an EC2 instance (Ubuntu 14.04 AMI)
-``docker run -d -e "host=ec2-xx-xxx-xxx-xxx.compute-1.amazonaws.com" -p 443:443 "scumblr"``
+``docker run -d -e "host=ec2-xx-xxx-xxx-xxx.compute-1.amazonaws.com" -p 80:80 -p 443:443 "scumblr"``
+5. Via your server in a browser (https://<server name/ip>)
+6. Login with the credentials you specfied (or the default if not changed: admin@admin.admin/password)
 
   
 
