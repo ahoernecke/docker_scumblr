@@ -47,6 +47,8 @@ This section includes instructions on creating deploying a container running Scu
 * Pull this repo from Github: 
 
 ``git clone https://github.com/ahoernecke/docker_scumblr``
+``cd docker_scumblr``
+
 
 * Build the docker image 
 
@@ -54,7 +56,7 @@ This section includes instructions on creating deploying a container running Scu
 
 * Run the container either:
 
-``docker run -d -p 443:443 "scumblr"`` 
+``docker run -d -p 80:80 -p 443:443 "scumblr"`` 
 
 * Access your server in a browser (https://<server name/ip>)
 
