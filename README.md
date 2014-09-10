@@ -43,12 +43,12 @@ This docker container ships with a self-signed cert to be used for SSL. To use a
 ## Deployment
 
 This section includes instructions on creating deploying a container running Scumblr. 
-
-1. Pull this repo from Github:
+1. Open boot2docker
+2. Pull this repo from Github:
 ``git clone https://github.com/ahoernecke/docker_scumblr``
-2. Build the docker image
+3. Build the docker image
 ``docker build -t "scumblr" . ``
-3. Run the container either:
+4. Run the container either:
   1. Locally (from boot2docker)
 ``docker run -d -p 443:443 "scumblr"`` 
   2. **or** On an EC2 instance (Ubuntu 14.04 AMI)

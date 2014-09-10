@@ -13,7 +13,7 @@
 #     limitations under the License.
 
 
-Scumblr::Application.configure do
+Scumblr::Application.configure do 
   # Should Scumblr automatically generate screenshots for new results
   # config.sketchy_url = "http://localhost:80/api/v1.0/capture"
   # config.sketch_use_ssl = false  # Does sketchy use ssl?
@@ -39,6 +39,4 @@ Scumblr::Application.configure do
   #config.twitter_consumer_secret     = ''
   #config.twitter_access_token        = ''
   #config.twitter_access_token_secret = ''
-
-
 end
