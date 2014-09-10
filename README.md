@@ -49,9 +49,9 @@ This section includes instructions on creating deploying a container running Scu
 2. Build the docker image
 ``docker build -t "scumblr" . ``
 3. Run the container either:
-  A. Locally (from boot2docker)
+  1. Locally (from boot2docker)
 ``docker run -d -p 443:443 "scumblr"`` 
-  B. **or** On an EC2 instance (Ubuntu 14.04 AMI)
+  2. **or** On an EC2 instance (Ubuntu 14.04 AMI)
 ``docker run -d -e "host=ec2-xx-xxx-xxx-xxx.compute-1.amazonaws.com" -p 443:443 "scumblr"``
 
   
