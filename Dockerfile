@@ -52,9 +52,9 @@ ADD config/scumblr/database.yml /scumblr/config/
 ADD config/scumblr/scumblr.rb /scumblr/config/initializers/
 
 # Setup db
-RUN /bin/bash -l -c "rake db:create"
-RUN /bin/bash -l -c "rake db:schema:load"
-RUN /bin/bash -l -c "rake db:seed"
+# RUN /bin/bash -l -c "rake db:create"
+# RUN /bin/bash -l -c "rake db:schema:load"
+# RUN /bin/bash -l -c "rake db:seed"
 
 # Publish port 80
 EXPOSE 80
@@ -63,9 +63,6 @@ EXPOSE 80
 ADD config/nginx/nginx-sites.conf /etc/nginx/sites-enabled/default
 ADD config/nginx/server.crt /etc/nginx/ssl/
 ADD config/nginx/server.key /etc/nginx/ssl/
-
-
-
 
 # Add startup script
 ADD scripts/start-server.sh /usr/bin/start-server.sh

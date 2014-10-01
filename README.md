@@ -20,7 +20,7 @@ This section discusses required/optional configuration that can be done prior to
 
 ### API Keys 
 
-Scumblr requires API keys to function. These can be setup in the config/scumblr/scumblr.rb file. Templates are contained in the file. 
+Scumblr requires API keys to function. These can be setup in the config/scumblr/scumblr.rb file. Templates are contained in the file. By default these can be set using environment vairables (see Environment Variables below)
 
 ### Admin User
 
@@ -34,11 +34,46 @@ These credentials can be set on line 2 the config/scumblr/seeds.rb file. Note: T
 
 ### Database 
 
-The default database will be an onboard SQLite db. This will work for testing but will be lost if the container terminates. To configure a permanent database, setup the database.yml file in config/scumblr/database.yml. This is configured like a standard Rails database.yml file (http://edgeguides.rubyonrails.org/configuring.html#configuring-a-database).
+The default database will be an onboard SQLite db. This will work for testing but will be lost if the container terminates. To configure a permanent database, setup the database.yml file in config/scumblr/database.yml or use the environment variable (see Environment Variables below). For more information on the database.yml file see http://edgeguides.rubyonrails.org/configuring.html#configuring-a-database.
 
 ### SSL
 
 This docker container ships with a self-signed cert to be used for SSL. To use a custom key pair/certificate replace the server.key and server.crt files in config/nginx
+
+### Environment Variables 
+
+The following are environment variables available to configure scumblr:
+
+  SKETCHY_PORT_443_TCP_ADDR
+  SKETCHY_PORT_443_TCP_PORT
+  SKETCHY_USE_SSL
+  SKETCHY_VERIFY_SSL
+  
+  RAILS_ENV # Select a rails environment (devlopment, staging, produdction)
+  DATABASE_URL # Configure a database URL (ex: sqlite3:///db/production.sqlite)
+
+  
+  EBAY_ACCESS_KEY
+  
+  FACEBOOK_APP_ID
+  FACEBOOK_APP_SECRET
+  
+  GOOGLE_DEVELOPER_KEY
+  GOOGLE_CX
+  GOOGLE_APPLICATION_NAME
+  GOOGLE_APPLICATION_VERSION
+  
+  YOUTUBE_DEVELOPER_KEY
+  YOUTUBE_APPLICATION_NAME
+  YOUTUBE_APPLICATION_VERSION
+
+  TWITTER_CONSUMER_KEY
+  TWITTER_CONSUMER_SECRET
+  TWITTER_ACCESS_TOKEN
+  TWITTER_ACCESS_TOKEN_SECRET
+
+  SEED_STATUSES # Create a default set of statuses if set to "true"
+  SEED_ADMIN # Create an admin user (admin@admin.admin/password) if no users exist and SEED_ADMIN set to "true"
 
 ## Deployment
 
@@ -49,7 +84,6 @@ This section includes instructions on creating deploying a container running Scu
 ``git clone https://github.com/ahoernecke/docker_scumblr``
 ``cd docker_scumblr``
 
-
 * Build the docker image 
 
 ``docker build -t "scumblr" . ``
@@ -58,7 +92,7 @@ This section includes instructions on creating deploying a container running Scu
 
 ``docker run -d -p 80:80 -p 443:443 "scumblr"`` 
 
-* Access your server in a browser (https://<server name/ip>)
+* Visit your server's dns name/ip in a browser
 
 * Login with the credentials you specfied (or the default if not changed: admin@admin.admin/password)
 
