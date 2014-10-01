@@ -52,7 +52,6 @@ The following are environment variables available to configure scumblr:
   RAILS_ENV # Select a rails environment (devlopment, staging, produdction)
   DATABASE_URL # Configure a database URL (ex: sqlite3:///db/production.sqlite)
 
-  
   EBAY_ACCESS_KEY
   
   FACEBOOK_APP_ID
