@@ -18,6 +18,8 @@ Scumblr::Application.configure do
   config.sketchy_url = "https://#{ENV["SKETCHY_PORT_443_TCP_ADDR"]}:#{ENV["SKETCHY_PORT_443_TCP_PORT"]}/api/v1.0/capture"
   config.sketchy_use_ssl = ENV["SKETCHY_USE_SSL"]
   config.sketchy_verify_ssl = ENV["SKETCHY_VERIFY_SSL"]
+  config.sketchy_access_token = ENV["SKETCHY_ACCESS_TOKEN"]
+  config.sketchy_tag_status_code = ENV["SKETCHY_TAG_STATUS_CODE"]
 
   # Provider configurations
 
