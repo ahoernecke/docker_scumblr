@@ -48,6 +48,8 @@ The following are environment variables available to configure scumblr:
   SKETCHY_PORT_443_TCP_PORT
   SKETCHY_USE_SSL
   SKETCHY_VERIFY_SSL
+  SKETCHY_ACCESS_TOKEN
+  SKETCHY_TAG_STATUS_CODE
   
   RAILS_ENV # Select a rails environment (devlopment, staging, produdction)
   DATABASE_URL # Configure a database URL (ex: sqlite3:///db/production.sqlite)
