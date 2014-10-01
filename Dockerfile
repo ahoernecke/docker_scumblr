@@ -39,6 +39,9 @@ RUN apt-get install -qy libmagickwand-dev imagemagick libmagickcore-dev
 # Install Redis
 RUN apt-get install -qy redis-server
 
+# Install Postgres requirements
+RUN sudo apt-get install libpq-dev
+
 # bundle install
 RUN /bin/bash -l -c "bundle install"
 
