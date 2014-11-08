@@ -13,6 +13,9 @@
 #     limitations under the License.
 
 
+Rails.application.routes.default_url_options[:host] ||= ENV["SCUMBLR_HOST"]
+Rails.application.routes.default_url_options[:protocol] ||= ENV["SCUMBLR_PROTOCOL"]
+
 Scumblr::Application.configure do 
   # Should Scumblr automatically generate screenshots for new results
   config.sketchy_url = "https://#{ENV["SKETCHY_PORT_443_TCP_ADDR"]}:#{ENV["SKETCHY_PORT_443_TCP_PORT"]}/api/v1.0/capture"

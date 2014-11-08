@@ -43,38 +43,47 @@ This docker container ships with a self-signed cert to be used for SSL. To use a
 ### Environment Variables 
 
 The following are environment variables available to configure scumblr:
+```
+SCUMBLR_HOST # Default hostname for scumblr (used for email notifications, etc.) i.e. "scumblr.com"
+SCUMBLR_PROTOCOL # Default protocol i.e. "https"
 
-  SKETCHY_PORT_443_TCP_ADDR
-  SKETCHY_PORT_443_TCP_PORT
-  SKETCHY_USE_SSL
-  SKETCHY_VERIFY_SSL
-  SKETCHY_ACCESS_TOKEN
-  SKETCHY_TAG_STATUS_CODE
-  
-  RAILS_ENV # Select a rails environment (devlopment, staging, produdction)
-  DATABASE_URL # Configure a database URL (ex: sqlite3:///db/production.sqlite)
+SCUMBLR_CREATE_DB # Run rake db:create if true. For initial DB setup.
+SCUMBLR_LOAD_SCHEMA # Run rake db:schema:load. For initial DB setup. Will reset DB to default!
+SCUMBLR_RUN_MIGRATIONS # Run rake db:migrate if true. Will update database with migrations if included.
+SCUMBLR_SEED_STATUSES # Create a default set of statuses if set to "true"
+SCUMBLR_SEED_ADMIN # Create an admin user (admin@admin.admin/password) if no users exist and SEED_ADMIN set to "true"
 
-  EBAY_ACCESS_KEY
-  
-  FACEBOOK_APP_ID
-  FACEBOOK_APP_SECRET
-  
-  GOOGLE_DEVELOPER_KEY
-  GOOGLE_CX
-  GOOGLE_APPLICATION_NAME
-  GOOGLE_APPLICATION_VERSION
-  
-  YOUTUBE_DEVELOPER_KEY
-  YOUTUBE_APPLICATION_NAME
-  YOUTUBE_APPLICATION_VERSION
+SKETCHY_PORT_443_TCP_ADDR
+SKETCHY_PORT_443_TCP_PORT
+SKETCHY_USE_SSL
+SKETCHY_VERIFY_SSL
+SKETCHY_ACCESS_TOKEN
+SKETCHY_TAG_STATUS_CODE
 
-  TWITTER_CONSUMER_KEY
-  TWITTER_CONSUMER_SECRET
-  TWITTER_ACCESS_TOKEN
-  TWITTER_ACCESS_TOKEN_SECRET
+RAILS_ENV # Select a rails environment (devlopment, staging, produdction)
+DATABASE_URL # Configure a database URL (ex: sqlite3:///db/production.sqlite)
 
-  SEED_STATUSES # Create a default set of statuses if set to "true"
-  SEED_ADMIN # Create an admin user (admin@admin.admin/password) if no users exist and SEED_ADMIN set to "true"
+EBAY_ACCESS_KEY
+
+FACEBOOK_APP_ID
+FACEBOOK_APP_SECRET
+
+GOOGLE_DEVELOPER_KEY
+GOOGLE_CX
+GOOGLE_APPLICATION_NAME
+GOOGLE_APPLICATION_VERSION
+
+YOUTUBE_DEVELOPER_KEY
+YOUTUBE_APPLICATION_NAME
+YOUTUBE_APPLICATION_VERSION
+
+TWITTER_CONSUMER_KEY
+TWITTER_CONSUMER_SECRET
+TWITTER_ACCESS_TOKEN
+TWITTER_ACCESS_TOKEN_SECRET
+
+
+```
 
 ## Deployment
 
@@ -91,7 +100,13 @@ This section includes instructions on creating deploying a container running Scu
 
 * Run the container either:
 
-``docker run -d -p 80:80 -p 443:443 "scumblr"`` 
+``docker run -p 80:80 -p 443:443 "scumblr"`` 
+
+
+
+
+
+
 
 * Visit your server's dns name/ip in a browser
 
